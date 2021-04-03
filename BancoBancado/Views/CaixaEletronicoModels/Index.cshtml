@@ -20,7 +20,14 @@ CaixaEletronico
         </div>
         <div class="valor">
             <b>Valor </b><input id="" /valor></input>
-            <p>Notas disponíveis: R$ 2, R$ 5, R$ 10, R$ 50, R$ 100</p>
+                         <p>
+                             Notas disponíveis:
+                             @foreach (var item in Model)
+                             {
+                                 <text>R$</text> @Html.DisplayFor(modelItem => item.Cedula)<text>,00; </text>
+
+                             }
+                         </p>
         </div>
         <button class="botao"><strong>Sacar</strong></button>
     </div>
@@ -28,7 +35,7 @@ CaixaEletronico
 </body>
 </html>
 
-@*<p>
+<p>
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="table">
@@ -56,6 +63,6 @@ CaixaEletronico
                 @Html.ActionLink("Delete", "Delete", new { id=item.id })
             </td>
         </tr>
-    }*@
+    }
 
-@*</table>*@
+</table>
